@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<nav>
+<a href="{{url_for('login')}}">Faça o login</a>
+
+</nav>
+
+<br>
+<form method="get" action="{{url_for('index')}}">
+    <input type="text" name="q" placeholder="procure o livro" value = "{{ q or ''}}">
+    <button type="submit">Buscar os livros</button>
+
+</form>
+
+{% if livros %}
+    {% for livro in livros %}
+    <div class="card">
+        <p> <a href="{{url_for('detalhe', livro_id = livro.id)}} "> Titulo do livro:{{livro.titulo}}</a></p>
+        <p>Ano do livro:{{livro.ano}}</p>
+        <p>Autor do livro: {{livro.autor}}</p>
+    </div>
+        
+    {% endfor %}
+
+{%else%}
+    
+    <p>não há livros cadastrados</p>
+
+{% endif %}
+
+
+
+{% endblock %}

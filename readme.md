@@ -1,9 +1,8 @@
 O código presente no app.py realiza as seguintes funções:
 
-Retorna os templates da livraria junto aos livros que já estão cadastrados em models.py, e apresenta o template de login, mas sem conter validações das informações
-credenciadas no models
+1*: O código no app.py apresenta a validação da visualização dos livros no index.html, apresentando a busca dos livros pela string de consulta usando q no input, e mostrando todos os livros existentes em models.
 
-Nos templates, especificamente na livraria.html, eu retorno o objeto livros que é criado no app.py que recebe as informações na função buscar_livros()
-e retorno a resenha usando a função resenhas_do_livro. No template login, eu tenho os inputs para o usuário digitar o nome e a senha.
+2*: Também há a visualização por id do livro na rota detalhes, incluindo a resenha, titulo, ano, autor, gênero e o usuario que fez a 
+resenha do livro.
 
-Tenha uma boa correção!!!.
+3*: por fim, há uma página de login com os inputs de senha e nome, todavia, não há validação.
