@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+
+
+
+{% if livros %}
+    {% for livro in livros %}
+    <div class="card">
+        <p> Titulo do livro:{{livro.titulo}}</p>
+        <p>Ano do livro:{{livro.ano}}</p>
+        <p>Autor do livro: {{livro.autor}}</p>
+    </div>
+
+        {% endfor %}
+
+{%else%}
+    
+    <p>não há livros cadastrados</p>
+
+{% endif %}
+
+
+    
+        {% for resenha in resenhas %}
+        <div class="card">
+
+            <p>{{resenha.texto}}</p>
+            
+        </div>
+
+        <a href="{{ url_for('catalog.index') }}">Início</a>
+            
+        {% endfor %}
+    
+
+<form action="{{url_for(reviews.resenhar), livro_id = id}}" method="post"></form>
+<p>Digite sua resenha</p>
+
+<textarea name="texto" id=""></textarea>
+
+        
+
+{% endblock %}
